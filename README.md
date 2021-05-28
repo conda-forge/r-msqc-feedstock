@@ -5,11 +5,9 @@ Home: https://CRAN.R-project.org/package=MSQC
 
 Package license: GPL-2 | GPL-3
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-msqc-feedstock/blob/master/LICENSE.txt)
 
 Summary: This is a toolkit for multivariate process monitoring. It computes several multivariate control charts e.g. Hotelling, Chi-squared, MEWMA, MCUSUM and Generalized Variance. Ten didactic datasets are included. It includes some techniques for assessing multivariate normality e.g. Mardia's, Royston's and Henze-Zirkler's tests. Please, see the NEWS file for the latest changes in the package.
-
-
 
 Current build status
 ====================
@@ -38,6 +36,7 @@ Installing `r-msqc` from the `conda-forge` channel can be achieved by adding `co
 
 ```
 conda config --add channels conda-forge
+conda config --set channel_priority strict
 ```
 
 Once the `conda-forge` channel has been enabled, `r-msqc` can be installed with:
@@ -108,9 +107,9 @@ build distinct package versions.
 
 In order to produce a uniquely identifiable distribution:
  * If the version of a package **is not** being increased, please add or increase
-   the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string).
+   the [``build/number``](https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-number-and-string).
  * If the version of a package **is** being increased, please remember to return
-   the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string)
+   the [``build/number``](https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-number-and-string)
    back to 0.
 
 Feedstock Maintainers
