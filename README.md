@@ -1,11 +1,11 @@
-About r-msqc
-============
+About r-msqc-feedstock
+======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-msqc-feedstock/blob/main/LICENSE.txt)
 
 Home: https://CRAN.R-project.org/package=MSQC
 
 Package license: GPL-2.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-msqc-feedstock/blob/main/LICENSE.txt)
 
 Summary: This is a toolkit for multivariate process monitoring. It computes several multivariate control charts e.g. Hotelling, Chi-squared, MEWMA, MCUSUM and Generalized Variance. Ten didactic datasets are included. It includes some techniques for assessing multivariate normality e.g. Mardia's, Royston's and Henze-Zirkler's tests. Please, see the NEWS file for the latest changes in the package.
 
