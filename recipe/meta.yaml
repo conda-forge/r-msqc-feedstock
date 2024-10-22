@@ -1,6 +1,5 @@
 {% set version = "1.1.0" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-msqc
@@ -13,8 +12,7 @@ source:
   sha256: 8e5c43c57d6bbd2399cb83a7e6c7039cd6157bd24ef097a21ea1a06141393ac7
 
 build:
-  merge_build_host: true  # [win]
-  number: 2
+  number: 3
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -22,14 +20,14 @@ build:
 
 requirements:
   build:
-    - {{ posix }}zip               # [win]
-    - xorg-libxfixes  # [linux]
-    - {{ cdt('libxxf86vm') }}  # [linux]
-    - {{ cdt('libxdamage') }}  # [linux]
-    - {{ cdt('libselinux') }}  # [linux]
+    - cross-r-base {{ r_base }}      # [build_platform != target_platform]
+    - {{ posix }}zip                 # [win]
+    - xorg-libxfixes                 # [linux]
+    - {{ cdt('libxxf86vm') }}        # [linux]
+    - {{ cdt('libxdamage') }}        # [linux]
+    - {{ cdt('libselinux') }}        # [linux]
     - {{ cdt('mesa-dri-drivers') }}  # [linux]
     - {{ cdt('mesa-libgl-devel') }}  # [linux]
-    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
     - r-rgl
@@ -38,6 +36,8 @@ requirements:
     - r-rgl
 
 test:
+  requires:
+    - xorg-libxfixes  # [linux]
   commands:
     - LD_LIBRARY_PATH=${BUILD_PREFIX}/x86_64-conda-linux-gnu/sysroot/usr/lib64:${BUILD_PREFIX}/lib $R -e "library('MSQC')"  # [not win]
     - "\"%R%\" -e \"library('MSQC')\""  # [win]
