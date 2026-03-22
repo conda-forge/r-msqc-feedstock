@@ -22,11 +22,9 @@ requirements:
   build:
     - cross-r-base {{ r_base }}      # [build_platform != target_platform]
     - {{ posix }}zip                 # [win]
-    - xorg-libxfixes                 # [linux]
   host:
     - r-base
     - r-rgl
-    - libgl-devel                    # [linux]
   run:
     - r-base
     - r-rgl
